@@ -9,7 +9,7 @@ export async function canCreateInterview() {
     hasPermission("unlimited_interviews").then(
       bool => bool || Promise.reject()
     ),
-    Promise.all([hasPermission("10_interview"), getUserInterviewCount()]).then(
+    Promise.all([hasPermission("1_interview"), getUserInterviewCount()]).then(
       ([has, c]) => {
         if (has && c < 1) return true
         return Promise.reject()
